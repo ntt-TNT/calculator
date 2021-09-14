@@ -5,7 +5,12 @@ public class Calculator {
 
     public Calculator(){}
     public Calculator(String expression){
-        this.expression=expression;
+        if (expression.charAt(0)=='-'){
+            this.expression = "0-"+expression;
+        }else {
+            this.expression=expression;
+        }
+
     }
 
     public String getResult() {

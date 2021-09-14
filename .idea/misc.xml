@@ -8,7 +8,19 @@
         <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_gridlayout.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/equ_button.xml" value="0.22592592592592592" />
         <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.11979166666666667" />
-        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.19788703778951647" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout-land/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout-land/activity_main_land.xml" value="0.1082427536231884" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout-land/head.xml" value="0.21472663139329806" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout-port/activity_main.xml" value="0.1082427536231884" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_binary.xml" value="0.144" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_slide_test.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_slidetest.xml" value="0.12158054711246201" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout/head.xml" value="0.136" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/layout/new_menu.xml" value="0.12158054711246201" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/menu-land/head.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/menu-land/menu.xml" value="0.2484375" />
+        <entry key="..\:/AndroidStudioProjects/MyApplication/app/src/main/res/menu/menu.xml" value="0.2212962962962963" />
       </map>
     </option>
   </component>
