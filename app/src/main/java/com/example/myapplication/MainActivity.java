@@ -177,8 +177,10 @@ public class MainActivity extends AppCompatActivity {
         if(input.equals("0")){
             input_text.setText(((Button) findViewById(view.getId())).getText());
         }else if (input_text.length()<8 && (op=='/' || op=='*' || op=='-' || op=='+') && !screen){
+            Log.d(TAG, "onBracketLeftButtonClick: "+screen);
             input_text.setText(input + ((Button) findViewById(view.getId())).getText());
-        }else {
+        }else if(screen){
+            input_text.setText(input + ((Button) findViewById(view.getId())).getText());
         }
 
     }
@@ -189,6 +191,8 @@ public class MainActivity extends AppCompatActivity {
         String result = result_text.getText().toString();
         char op = input.charAt(input.length()-1);
         if(input_text.length()<=10 && op!='/' && op!='*' && op!='-' && op!='+' && !screen){
+            input_text.setText(input + ((Button) findViewById(view.getId())).getText());
+        }else if(screen){
             input_text.setText(input + ((Button) findViewById(view.getId())).getText());
         }
 //        input_text.setSelection(input_text.length());

@@ -11,7 +11,8 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".BinaryActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

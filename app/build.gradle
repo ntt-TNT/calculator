@@ -32,6 +32,10 @@ android {
 }
 
 dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+//    api project(':loopview')
+    api 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.github.weidongjian:androidWheelView:1.0.0'
 
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
