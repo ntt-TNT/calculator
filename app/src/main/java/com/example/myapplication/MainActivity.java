@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -37,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     ImageView menu;
 
+    //SharedPreferences文件名
+    private final static String SharedPreferencesFileName="config";
+    private final static String Key_Input = "CalInput";
+    private final static String Key_Result = "CalResult";
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
     //声音
     private SoundPool soundPool;
     private int music;
@@ -57,12 +65,38 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
 
-
         input_text = findViewById(R.id.input_text);
         result_text = findViewById(R.id.result_text);
 
+
         soundPool = new SoundPool(10, AudioManager.STREAM_SYSTEM,5);
         music = soundPool.load(this,R.raw.music,1);
+
+        preferences=getSharedPreferences(SharedPreferencesFileName,MODE_PRIVATE);
+        editor=preferences.edit();
+
+        onDisplay();
+    }
+
+    public void onSend(){
+        String input = input_text.getText().toString();
+        String result = result_text.getText().toString();
+
+        editor.putString(Key_Input, input);
+        editor.putString(Key_Result, result);
+
+        editor.apply();
+
+        onDisplay();
+    }
+
+    public void onDisplay() {
+        String userName = preferences.getString(Key_Input, null);
+        String userId = preferences.getString(Key_Result, null);
+        if (userName != null && userId != null) {
+            input_text.setText(userName);
+            result_text.setText(userId);
+        }
     }
 
     public static void setStatusBarTranslucent(Activity activity) {
@@ -208,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e){
             result_text.setText("错误");
         }
-//        input_text.setSelection(input_text.length());
+        onSend();
 
     }
 
@@ -352,12 +386,16 @@ public class MainActivity extends AppCompatActivity {
 //                        Toast.makeText(MainActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.unit:
-//                        showUnit();
-                        Toast.makeText(MainActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
+                        Intent intent_unit = new Intent(MainActivity.this,UnitActivity.class);
+                        startActivity(intent_unit);
+                        finish();
+//                        Toast.makeText(MainActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.rate:
-//                        showRate();
-                        Toast.makeText(MainActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
+                        Intent intent_rate = new Intent(MainActivity.this,RateActivity.class);
+                        startActivity(intent_rate);
+                        finish();
+//                        Toast.makeText(MainActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.cashbook:
 //                        showCashbook();

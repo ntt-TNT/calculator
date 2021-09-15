@@ -84,12 +84,16 @@ public class BinaryActivity extends AppCompatActivity {
 //                        Toast.makeText(MainActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.unit:
-//                        showUnit();
-                        Toast.makeText(BinaryActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
+                        Intent intent_unit = new Intent(BinaryActivity.this,UnitActivity.class);
+                        startActivity(intent_unit);
+                        finish();
+//                        Toast.makeText(BinaryActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.rate:
-//                        showRate();
-                        Toast.makeText(BinaryActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
+                        Intent intent_rate = new Intent(BinaryActivity.this,RateActivity.class);
+                        startActivity(intent_rate);
+                        finish();
+//                        Toast.makeText(BinaryActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.cashbook:
 //                        showCashbook();
@@ -140,7 +144,10 @@ public class BinaryActivity extends AppCompatActivity {
                 type2 = index;
                 String num1 = editNum1.getText().toString();
                 String num2 = editNum2.getText().toString();
-                operation(num1,type1,num2,type2);
+                if(num1!=null && !num1.equals("")){
+                    operation(num1,type1,num2,type2);
+                }
+
             }
 
         });
@@ -315,14 +322,6 @@ public class BinaryActivity extends AppCompatActivity {
         });
 
     }
-
-    public void getArea(int type){
-
-
-
-    }
-
-
 
 
     public void operation(String num1, int type1, String num2, int type2){

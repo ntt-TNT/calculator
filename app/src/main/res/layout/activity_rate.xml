@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BinaryActivity"
+    android:id="@+id/activity_nav">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:layout_margin="0dp"
+        android:weightSum="10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/constraintLayout">
+
+        <LinearLayout
+            android:id="@+id/topMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:adjustViewBounds="true"
+            android:gravity="fill"
+            android:orientation="horizontal"
+            app:layout_constraintHeight_percent="0.08"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/main_menu"
+                android:layout_width="63dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/menu" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:adjustViewBounds="true"
+            android:gravity="fill"
+            android:orientation="vertical"
+            app:layout_constraintHeight_percent="0.92"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/edit_num1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=""/>
+
+                    <com.weigan.loopview.LoopView
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/loopView1"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        app:awv_textsize="18"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        app:awv_isLoop="false"/>
+
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="重置"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/transform"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/transform" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/edit_num2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=""/>
+
+                    <com.weigan.loopview.LoopView
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/loopView2"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        app:awv_textsize="18"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        app:awv_isLoop="false"/>
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="重置" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="latest update time: "/>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <com.google.android.material.navigation.NavigationView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/head"
+        app:menu="@menu/menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
